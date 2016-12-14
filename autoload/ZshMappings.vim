@@ -1,12 +1,3 @@
-function! ZshMappings#define_mappings_for_insert_mode()
-  call s:define_mappings_for_mode('i', extend(s:get_mappings(), {
-  \   '<C-k>': '<Esc>Di',
-  \   '<C-n>': '<Down>',
-  \   '<C-p>': '<Up>',
-  \   '<C-u>': '<Esc>0d$i',
-  \ }))
-endfunction
-
 function! ZshMappings#define_mappings_for_command_mode(tool)
   call s:define_mappings_for_mode('c', extend(s:get_mappings(), {
   \   '<C-k>': '<Esc>',
@@ -15,6 +6,15 @@ function! ZshMappings#define_mappings_for_command_mode(tool)
   if len(a:tool) > 0
     exec 'cnoremap <silent><expr> <C-r> ZshMappings#search_command_mode_history("' . a:tool . '")'
   endif
+endfunction
+
+function! ZshMappings#define_mappings_for_insert_mode()
+  call s:define_mappings_for_mode('i', extend(s:get_mappings(), {
+  \   '<C-k>': '<Esc>Di',
+  \   '<C-n>': '<Down>',
+  \   '<C-p>': '<Up>',
+  \   '<C-u>': '<Esc>0d$i',
+  \ }))
 endfunction
 
 function! ZshMappings#search_command_mode_history(tool)
