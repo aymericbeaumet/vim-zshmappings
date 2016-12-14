@@ -1,0 +1,55 @@
+TABLE OF CONTENTS
+==============================================================================
+
+    RATIONALE
+    INSTALLATION
+    CUSTOMIZATION
+    LICENSE
+
+RATIONALE
+==============================================================================
+
+INSTALLATION
+==============================================================================
+
+Using {vim-plug}{1}:
+>
+    Plug 'aymericbeaumet/zsh.vim'
+<
+                                      {1} https://github.com/junegunn/vim-plug
+
+CUSTOMIZATION
+==============================================================================
+
+  *loaded_zsh*
+
+Turn off the script.
+
+  *ZshInsertModeMappings*
+
+Values: 0 or 1
+Default: 1
+
+If set to 1, define the insert mode mappings.
+
+  *ZshCommandModeMappings*
+
+Values: 0 or 1
+Default: 1
+
+If set to 1, define dhe command mode mappings.
+
+  *ZshCommandModeSearchHistoryTool*
+
+Values: '' or 'fzf.vim'
+Default: ''
+
+If set, will define the mapping to search the command history ala Zsh (^R). Only support fzf.vim for now.
+
+LICENSE
+==============================================================================
+
+Public Domain Dedication - https://creativecommons.org/publicdomain/zero/1.0
+
+To the extent possible under law, Aymeric Beaumet has waived all copyright and
+related or neighboring rights to this work.

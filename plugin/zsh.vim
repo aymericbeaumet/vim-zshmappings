@@ -1,26 +1,30 @@
-" Define the insert mode mappings
-
-if !exists('g:zsh_insert_mode_mappings')
-  let g:zsh_insert_mode_mappings = 1
+if exists("loadednerdtree")
+    finish
 endif
 
-if g:zsh_insert_mode_mappings
+" Grab options
+
+if !exists('g:ZshCommandModeMappings')
+  let g:ZshCommandModeMappings = 1
+endif
+if !exists('g:ZshCommandModeSearchHistoryTool')
+  let g:ZshCommandModeSearchHistoryTool = ''
+end
+if !exists('g:ZshInsertModeMappings')
+  let g:ZshInsertModeMappings = 1
+endif
+
+" Define the insert mode mappings
+
+if g:ZshInsertModeMappings
   call zsh#DefineMappingsForInsertMode()
 endif
 
-" Define the command mode mappings
+" Define the command mode mappings, along with the search history tool mappings
 
-if !exists('g:zsh_command_mode_mappings')
-  let g:zsh_command_mode_mappings = 1
-endif
-
-if !exists('g:zsh_command_mode_search_history_tool')
-  let g:zsh_command_mode_search_history_tool = ''
-end
-
-if g:zsh_command_mode_mappings
+if g:ZshCommandModeMappings
   call zsh#DefineMappingsForCommandMode()
-  if len(g:zsh_command_mode_search_history_tool) > 0
-    call zsh#DefineMappingsForCommandModeSearchHistory(g:zsh_command_mode_search_history_tool)
+  if len(g:ZshCommandModeSearchHistoryTool) > 0
+    call zsh#DefineMappingsForCommandModeSearchHistory(g:ZshCommandModeSearchHistoryTool)
   endif
 endif
