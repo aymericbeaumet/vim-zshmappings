@@ -1,4 +1,4 @@
-*ZshMappings.txt*
+*zshmappings.txt*
 
 Author:  Aymeric Beaumet <hi@aymericbeaumet.com> (https://aymericbeaumet.com)
 License: https://creativecommons.org/publicdomain/zero/1.0
