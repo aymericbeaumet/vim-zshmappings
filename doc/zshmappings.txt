@@ -3,43 +3,44 @@
 Author:  Aymeric Beaumet <hi@aymericbeaumet.com> (https://aymericbeaumet.com)
 License: Public Domain
 
-=============================================================================
+==============================================================================
 Help on zshmappings.vim                                      *zshmappings-help*
 
-1. Introduction                 |zshmappings-introduction|
-2. Rationale                    |zshmappings-rationale|
-3. Installation                 |zshmappings-install|
-4. Settings                     |zshmappings-settings|
-5. FAQ                          |zshmappings-faq|
-6. License                      |zshmappings-license|
+    1. Introduction ............... |zshmappings-introduction|
+    2. Rationale .................. |zshmappings-rationale|
+    3. Installation ............... |zshmappings-install|
+    4. Configuration .............. |zshmappings-configuration|
+    5. FAQ ........................ |zshmappings-faq|
+    6. Bugs ....................... |zshmappings-bugs|
+    7. Contributing ............... |zshmappings-contributing|
+    8. License .................... |zshmappings-license|
 
 ==============================================================================
 1. Introduction                                       *zshmappings-introduction*
 
-zshmappings.vim aims at providing efficient Vim mappings in insert and command
-mode when a one is already proficient with the Zsh bindings (`^B`, `^F`, ...).
+zshmappings.vim aims at providing Vim mappings in insert and command mode to
+help a one already proficient with the Zsh bindings (`^B`, `^F`, ...).
 
 ==============================================================================
 2. Rationale                                             *zshmappings-rationale*
 
-I've been developping a muscular memory for the Zsh bindings, in fact I use
-them as soon as I can, they are now standards in most text forms. I feel
-frustrating not being able to use them in Vim, this plugin solves that issue
-by exposing those bindings in the command and insert modes.
+Over the years I've been developping a muscular memory for the Zsh bindings,
+in fact I use them as soon as I can, they are now standards in most text
+forms. I feel frustrating to sometime not being able to use them in Vim, this
+plugin solves that issue by exposing those bindings in the command and insert
+modes.
 
 ==============================================================================
 3. Installation                                            *zshmappings-install*
 
 Using {vim-plug}{1}:
-
 >
     Plug 'aymericbeaumet/zshmappings.vim'
 <
-
                                       {1} https://github.com/junegunn/vim-plug
 
 ==============================================================================
-4. Settings                                               *zshmappings-settings*
+4. Configuration                                     *zshmappings-configuration*
 
 You can configure this plugin through the following global variables.
 
@@ -47,11 +48,9 @@ You can configure this plugin through the following global variables.
 *g:zshmappings_loaded*
 
 If set, turn off the script.
-
 >
     let g:zshmappings_loaded = 1
 <
-
 ------------------------------------------------------------------------------
 *g:zshmappings_command_mode_mappings*
 
@@ -59,11 +58,9 @@ Values: `0` or `1`
 Default: `1`
 
 If set to `1`, define the command mode mappings.
-
 >
     let g:zshmappings_command_mode_mappings = 1
 <
-
 ------------------------------------------------------------------------------
 *g:zshmappings_command_mode_search_history_tool*
 
@@ -72,11 +69,9 @@ Default: `''`
 
 If set, will define the mapping to search the command history ala Zsh (^R).
 Only support `fzf.vim` for now.
-
 >
     let g:zshmappings_command_mode_search_history_tool = 'fzf.vim'
 <
-
 ------------------------------------------------------------------------------
 *g:zshmappings_insert_mode_mappings*
 
@@ -84,11 +79,9 @@ Values: `0` or `1`
 Default: `1`
 
 If set to 1, define the insert mode mappings.
-
 >
     let g:zshmappings_insert_mode_mappings = 1
 <
-
 ==============================================================================
 5. FAQ                                                         *zshmappings-faq*
 
@@ -98,12 +91,32 @@ Though most of the time it will be faster to go back to normal mode to perform
 edition operations, sometime it could be more comfortable or easier thanks to
 your muscular memory to stay in insert mode and use the Zsh bindings.
 
-==============================================================================
-6. License                                                 *zshmappings-license*
 
-Public Domain - {CC0}{2}
+==============================================================================
+6. Bugs                                                       *zshmappings-bugs*
+
+If you find a bug please post it on the issue {tracker}{2}.
+
+                  {2} https://github.com/aymericbeaumet/zshmappings.vim/issues
+
+==============================================================================
+7. Contributing                                       *zshmappings-contributing*
+
+Think you can make this plugin better? Awesome! Fork it on {GitHub}{3} and
+send a pull request.
+
+                         {3} https://github.com/aymericbeaumet/zshmappings.vim
+
+
+==============================================================================
+8. License                                                 *zshmappings-license*
+
+Public Domain - {CC0}{4}
 
 To the extent possible under law, Aymeric Beaumet has waived all copyright and
 related or neighboring rights to this work.
 
-                          {2} http://creativecommons.org/publicdomain/zero/1.0
+                          {4} http://creativecommons.org/publicdomain/zero/1.0
+
+==============================================================================
+ vim:tw=78:ft=help
