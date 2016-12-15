@@ -1,14 +1,14 @@
-function! ZshMappings#define_mappings_for_command_mode(tool)
+function! zshmappings#define_mappings_for_command_mode(history_tool)
   call s:define_mappings_for_mode('c', extend(s:get_mappings(), {
   \   '<C-k>': '<Esc>',
   \   '<C-u>': '<C-c>:',
   \ }))
-  if len(a:tool) > 0
-    exec 'cnoremap <silent><expr> <C-r> ZshMappings#search_command_mode_history("' . a:tool . '")'
+  if len(a:history_tool) > 0
+    exec 'cnoremap <silent><expr> <C-r> zshmappings#search_command_mode_history("' . a:history_tool . '")'
   endif
 endfunction
 
-function! ZshMappings#define_mappings_for_insert_mode()
+function! zshmappings#define_mappings_for_insert_mode()
   call s:define_mappings_for_mode('i', extend(s:get_mappings(), {
   \   '<C-k>': '<Esc>Di',
   \   '<C-n>': '<Down>',
@@ -17,7 +17,7 @@ function! ZshMappings#define_mappings_for_insert_mode()
   \ }))
 endfunction
 
-function! ZshMappings#search_command_mode_history(tool)
+function! zshmappings#search_command_mode_history(tool)
   let l:INTERRUPT = "\u03" " <C-c>
   let l:SUBMIT = "\u0d" " <C-m>
   if a:tool ==# 'fzf.vim'
