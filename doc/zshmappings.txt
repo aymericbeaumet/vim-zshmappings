@@ -4,7 +4,7 @@ Author:  Aymeric Beaumet <hi@aymericbeaumet.com> (https://aymericbeaumet.com)
 License: Public Domain
 
 ==============================================================================
-Help on zshmappings.vim                                      *zshmappings-help*
+Help on zshmappings.vim                                       *zshmappings-help*
 
     1. Introduction ............... |zshmappings-introduction|
     2. Rationale .................. |zshmappings-rationale|
@@ -18,8 +18,10 @@ Help on zshmappings.vim                                      *zshmappings-help*
 ==============================================================================
 1. Introduction                                       *zshmappings-introduction*
 
-zshmappings.vim aims at providing Vim mappings in insert and command mode to
-help a one already proficient with the Zsh bindings (`^B`, `^F`, ...).
+{zshmappings.vim}{1} aims at providing Vim mappings in insert and command mode
+to help a one already proficient with the Zsh bindings (`^B`, `^F`, ...).
+
+                         {1} https://github.com/aymericbeaumet/zshmappings.vim
 
 ==============================================================================
 2. Rationale                                             *zshmappings-rationale*
@@ -33,11 +35,11 @@ modes.
 ==============================================================================
 3. Installation                                            *zshmappings-install*
 
-Using {vim-plug}{1}:
+Using {vim-plug}{2}:
 >
     Plug 'aymericbeaumet/zshmappings.vim'
 <
-                                      {1} https://github.com/junegunn/vim-plug
+                                      {2} https://github.com/junegunn/vim-plug
 
 ==============================================================================
 4. Configuration                                     *zshmappings-configuration*
@@ -94,27 +96,27 @@ your muscular memory to stay in insert mode and use the Zsh bindings.
 ==============================================================================
 6. Bugs                                                       *zshmappings-bugs*
 
-If you find a bug please post it on the issue {tracker}{2}.
+If you find a bug please post it on the issue {tracker}{3}.
 
-                  {2} https://github.com/aymericbeaumet/zshmappings.vim/issues
+                  {3} https://github.com/aymericbeaumet/zshmappings.vim/issues
 
 ==============================================================================
 7. Contributing                                       *zshmappings-contributing*
 
-Think you can make this plugin better? Awesome! Fork it on {GitHub}{3} and
+Think you can make this plugin better? Awesome! Fork it on {GitHub}{4} and
 send a pull request.
 
-                         {3} https://github.com/aymericbeaumet/zshmappings.vim
+                         {4} https://github.com/aymericbeaumet/zshmappings.vim
 
 ==============================================================================
 8. License                                                 *zshmappings-license*
 
-Public Domain - {CC0}{4}
+Public Domain - {CC0}{5}
 
 To the extent possible under law, Aymeric Beaumet has waived all copyright and
 related or neighboring rights to this work.
 
-                          {4} http://creativecommons.org/publicdomain/zero/1.0
+                          {5} http://creativecommons.org/publicdomain/zero/1.0
 
 ==============================================================================
  vim:tw=78:ft=help
