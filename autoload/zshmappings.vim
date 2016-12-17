@@ -1,5 +1,6 @@
 function! zshmappings#define_mappings_for_command_mode(history_tool)
   call s:define_mappings_for_mode('c', extend(s:get_mappings(), {
+  \   '<Esc>': '<C-f>',
   \   '<C-k>': '<Esc>',
   \   '<C-u>': '<C-c>:',
   \ }))
