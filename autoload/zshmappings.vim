@@ -1,16 +1,12 @@
 function! zshmappings#define_mappings_for_command_mode(history_tool)
-  call s:define_mappings_for_mode('c', extend(s:get_mappings(), {
-  \   '<Esc>': '<C-f>',
-  \   '<C-k>': '<Esc>',
-  \   '<C-u>': '<C-c>:',
-  \ }))
+  call s:define_mappings_for_mode('c', s:get_shared_mappings())
   if len(a:history_tool) > 0
-    exec 'cnoremap <silent><expr> <C-r> zshmappings#search_command_mode_history("' . a:history_tool . '")'
+    exec 'cnoremap <silent><expr> <C-r> zshmappings#search_command_mode_history(' . string(a:history_tool) . ')'
   endif
 endfunction
 
 function! zshmappings#define_mappings_for_insert_mode()
-  call s:define_mappings_for_mode('i', extend(s:get_mappings(), {
+  call s:define_mappings_for_mode('i', extend(s:get_shared_mappings(), {
   \   '<C-k>': '<Esc>Di',
   \   '<C-n>': '<Down>',
   \   '<C-p>': '<Up>',
@@ -31,14 +27,13 @@ function! zshmappings#search_command_mode_history(tool)
       return l:INTERRUPT . ':keepp call fzf#vim#search_history(' .  l:args . ')' . l:SUBMIT
     endif
   else
-    echoerr 'Unsupport history tool: ' . a:tool
+    echoerr 'Unsupported history tool: ' . a:tool
   endif
-  return ''
 endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-function! s:get_mappings()
+function! s:get_shared_mappings()
   return {
   \   '<C-a>': '<Home>',
   \   '<C-b>': '<Left>',
@@ -54,7 +49,7 @@ function! s:get_mappings()
 endfunction
 
 function! s:define_mappings_for_mode(mode, mappings)
-  for lhs in keys(a:mappings)
-    exec a:mode . 'noremap ' . lhs . ' ' . a:mappings[lhs]
+  for key in keys(a:mappings)
+    exec a:mode . 'noremap ' . key . ' ' . a:mappings[key]
   endfor
 endfunction
