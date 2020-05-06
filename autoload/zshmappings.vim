@@ -8,8 +8,6 @@ endfunction
 function! zshmappings#define_mappings_for_insert_mode()
   call s:define_mappings_for_mode('i', extend(s:get_shared_mappings(), {
   \   '<C-k>': '<Esc>Di',
-  \   '<C-n>': '<Down>',
-  \   '<C-p>': '<Up>',
   \   '<C-u>': '<Esc>0d$i',
   \ }))
 endfunction
